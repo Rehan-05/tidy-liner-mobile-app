@@ -55,9 +55,9 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="explore"
+        name="jobs"
         options={{
-          title: "Search",
+          title: "Jobs",
           tabBarIcon: ({ focused, color }) => (
             <MaterialCommunityIcons
               name={"layers-search"}
@@ -69,11 +69,21 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="bookings"
+        name="trainings"
         options={{
-          title: "Bookings",
+          title: "Trainings",
           tabBarIcon: ({ focused, color }) => (
             <MaterialCommunityIcons name={"calendar"} size={28} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="earnings"
+        options={{
+          title: "Earnings",
+          tabBarIcon: ({ focused, color }) => (
+            <MaterialCommunityIcons name={"account"} size={28} color={color} />
           ),
         }}
       />

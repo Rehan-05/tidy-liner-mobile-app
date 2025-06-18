@@ -2,7 +2,7 @@ import { COLORS, FONTS } from "@/constants/theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, StatusBar } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -38,18 +38,24 @@ export default function TabLayout() {
         tabBarActiveTintColor: COLORS.primaryDarkGreen,
         tabBarInactiveTintColor: COLORS.dustyMint,
         tabBarLabelStyle: {
-          fontSize: 14,
+          fontSize: 13,
           fontFamily: FONTS.medium,
           marginTop: 5,
         },
       }}
     >
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
+
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
-          tabBarIcon: ({ focused, color }) => (
-            <MaterialCommunityIcons name={"home"} size={28} color={color} />
+          title: "Feed",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" size={25} color={color} />
           ),
         }}
       />
@@ -58,12 +64,8 @@ export default function TabLayout() {
         name="jobs"
         options={{
           title: "Jobs",
-          tabBarIcon: ({ focused, color }) => (
-            <MaterialCommunityIcons
-              name={"layers-search"}
-              size={28}
-              color={color}
-            />
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="briefcase" size={25} color={color} />
           ),
         }}
       />
@@ -72,8 +74,8 @@ export default function TabLayout() {
         name="trainings"
         options={{
           title: "Trainings",
-          tabBarIcon: ({ focused, color }) => (
-            <MaterialCommunityIcons name={"calendar"} size={28} color={color} />
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="school" size={25} color={color} />
           ),
         }}
       />
@@ -82,8 +84,8 @@ export default function TabLayout() {
         name="earnings"
         options={{
           title: "Earnings",
-          tabBarIcon: ({ focused, color }) => (
-            <MaterialCommunityIcons name={"account"} size={28} color={color} />
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="wallet" size={25} color={color} />
           ),
         }}
       />
@@ -92,8 +94,12 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ focused, color }) => (
-            <MaterialCommunityIcons name={"account"} size={28} color={color} />
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="account-circle"
+              size={25}
+              color={color}
+            />
           ),
         }}
       />

@@ -41,7 +41,7 @@ export default function TypeSelection() {
           title="User Side"
           variant="secondary"
           onPress={() => {
-            router.push("/(tabs)");
+            router.push("/screens/user/onboarding/onboarding");
           }}
           style={[
             styles.roleButton,

@@ -4,17 +4,22 @@
     "slug": "tidy-linker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/app-logo.png",
     "scheme": "tidylinker",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
+    "splash": {
+      "image": "./assets/images/transparent.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/app-logo.png",
+        "backgroundColor": "#F9F7F1"
       },
       "edgeToEdgeEnabled": true
     },
@@ -28,7 +33,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/transparent.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"

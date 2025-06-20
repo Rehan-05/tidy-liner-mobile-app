@@ -21,13 +21,13 @@ const dummyBookings = {
           "https://images.unsplash.com/photo-1664575602554-2087b04935a5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0",
         rating: 4.8,
       },
-      date: "2024-02-25",
+      date: "25/02/2024",
       time: "14:00 - 16:00",
       duration: "2 hours",
       service: "Deep Clean",
       status: "Confirmed",
-      price: "$50",
-      address: "123 Main St, Apt 4B",
+      price: "£50",
+      address: "18 Kings Rd, London",
     },
     {
       id: "2",
@@ -37,13 +37,13 @@ const dummyBookings = {
           "https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0",
         rating: 4.9,
       },
-      date: "2024-02-28",
+      date: "28/02/2024",
       time: "10:00 - 13:00",
       duration: "3 hours",
       service: "Pet-Friendly Clean",
       status: "Pending",
-      price: "$75",
-      address: "456 Park Ave, Suite 2C",
+      price: "£75",
+      address: "22 Green St, Manchester",
     },
   ],
   past: [
@@ -55,13 +55,13 @@ const dummyBookings = {
           "https://plus.unsplash.com/premium_photo-1705018500344-450a9e2d4c56?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0",
         rating: 4.7,
       },
-      date: "2024-02-10",
+      date: "10/02/2024",
       time: "09:00 - 11:00",
       duration: "2 hours",
       service: "Regular Clean",
       status: "Completed",
-      price: "$45",
-      address: "789 Oak St, Unit 5",
+      price: "£45",
+      address: "5 Church Ln, Leeds",
       rating: 5,
     },
   ],
@@ -138,7 +138,7 @@ export default function Bookings() {
             color={COLORS.backgroundCream}
           />
           <Text style={styles.detailText}>
-            {new Date(item.date).toLocaleDateString()} • {item.time}
+            {item.date} • {item.time}
           </Text>
         </View>
         <View style={styles.detailRow}>

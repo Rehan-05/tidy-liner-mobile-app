@@ -1,81 +1,47 @@
-import { CustomButton } from "@/components/CustomButton";
 import { COLORS, FONTS } from "@/constants/theme";
 import { router } from "expo-router";
-import React, { useState } from "react";
+import React from "react";
 import {
   Image,
+  Platform,
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 
 export default function TypeSelection() {
-  const [selectedRole, setSelectedRole] = useState<"client" | "cleaner" | null>(
-    null
-  );
-
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" />
-
-      <View style={styles.headerContainer}>
-        <Text style={styles.welcomeText}>Welcome</Text>
-        <Text style={styles.subtitleText}>Choose your role</Text>
-      </View>
-
-      <View style={styles.logoContainer}>
-        <View style={styles.logoBox}>
+      <View style={styles.content}>
+        <View style={styles.logoSection}>
           <Image
             source={require("@/assets/images/app-logo.png")}
-            style={styles.logoImage}
+            style={styles.logo}
             resizeMode="contain"
           />
         </View>
-        <Text style={styles.logoText}>Tidy Linker</Text>
-      </View>
 
-      <View style={styles.buttonContainer}>
-        <CustomButton
-          title="User Side"
-          variant="secondary"
-          onPress={() => {
-            router.push("/screens/user/onboarding/onboarding");
-          }}
-          style={[
-            styles.roleButton,
-            { backgroundColor: COLORS.softSageGreen },
-            selectedRole === "client" && styles.roleButtonSelected,
-          ]}
-          textStyle={{
-            color: COLORS.primaryDarkGreen,
-            fontSize: 18,
-            fontFamily: FONTS.semiBold,
-          }}
-        />
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              router.push("/screens/auth/authentication?type=user")
+            }
+          >
+            <Text style={styles.buttonText}>User Side</Text>
+          </TouchableOpacity>
 
-        <CustomButton
-          title="Cleaner Side"
-          variant="outline"
-          onPress={() => {
-            router.push("/(tabs)");
-          }}
-          style={[
-            styles.roleButton,
-            {
-              backgroundColor: "transparent",
-              borderWidth: 1.5,
-              borderColor: COLORS.backgroundCream,
-            },
-            selectedRole === "cleaner" && styles.roleButtonSelectedOutline,
-          ]}
-          textStyle={{
-            color: COLORS.backgroundCream,
-            fontSize: 18,
-            fontFamily: FONTS.semiBold,
-          }}
-        />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              router.push("/screens/auth/authentication?type=cleaner")
+            }
+          >
+            <Text style={styles.buttonText}>Cleaner Side</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -84,102 +50,48 @@ export default function TypeSelection() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.primaryDarkGreen,
+    backgroundColor: COLORS.backgroundCream,
+    paddingTop: Platform.OS === "android" ? 24 : 0,
   },
-  headerContainer: {
-    paddingHorizontal: 24,
-    paddingTop: 60,
+  content: {
+    flex: 1,
+    justifyContent: "space-between",
     alignItems: "center",
+    paddingVertical: 60,
+    paddingHorizontal: 24,
   },
-  welcomeText: {
-    fontSize: 40,
-    color: COLORS.backgroundCream,
-    fontFamily: FONTS.bold,
-    marginBottom: 12,
-  },
-  subtitleText: {
-    fontSize: 28,
-    color: COLORS.backgroundCream,
-    fontFamily: FONTS.medium,
-    opacity: 0.9,
-  },
-  logoContainer: {
+  logoSection: {
     alignItems: "center",
     marginTop: 40,
-    marginBottom: 60,
   },
-  logoBox: {
-    width: 120,
-    height: 120,
-    backgroundColor: COLORS.backgroundCream,
-    borderRadius: 24,
-    padding: 20,
-    marginBottom: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
-    elevation: 8,
-  },
-  logoImage: {
-    width: "100%",
-    height: "100%",
+  logo: {
+    width: 250,
+    height: 250,
+    marginBottom: 16,
   },
   logoText: {
-    fontSize: 24,
-    color: COLORS.backgroundCream,
+    fontSize: 32,
+    color: COLORS.primaryDarkGreen,
     fontFamily: FONTS.bold,
-    opacity: 0.9,
   },
   buttonContainer: {
-    paddingHorizontal: 24,
+    width: "100%",
     gap: 16,
+    paddingHorizontal: 20,
   },
-  roleButton: {
-    height: 60,
-    borderRadius: 30,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 4,
+  button: {
+    width: "100%",
+    height: 56,
+    borderRadius: 28,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: COLORS.primaryDarkGreen,
+    backgroundColor: COLORS.backgroundCream,
   },
-  roleButtonSelected: {
-    transform: [{ scale: 1.02 }],
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 8,
-    borderWidth: 2,
-    borderColor: COLORS.white,
-  },
-  roleButtonSelectedOutline: {
-    transform: [{ scale: 1.02 }],
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 8,
-    borderWidth: 2,
-    borderColor: COLORS.white,
-  },
-  continueButton: {
-    position: "absolute",
-    bottom: 40,
-    left: "5%",
-    width: "90%",
-    height: 60,
-    borderRadius: 30,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
-    elevation: 6,
+  buttonText: {
+    fontSize: 18,
+    fontFamily: FONTS.medium,
+    color: COLORS.primaryDarkGreen,
   },
 });

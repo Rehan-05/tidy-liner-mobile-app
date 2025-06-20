@@ -12,8 +12,8 @@ import {
 
 const dummyUser = {
   name: "Sophia Carter",
-  phone: "+1(555) 987-6543",
-  email: "sophia.carter@email.com",
+  phone: "+44 7911 123456",
+  email: "sophia.carter@mail.co.uk",
   image:
     "https://images.unsplash.com/photo-1664575602554-2087b04935a5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0",
 };
@@ -22,13 +22,13 @@ const addresses = [
   {
     id: "1",
     type: "Home",
-    address: "789 Pine St, Anytown, USA",
+    address: "45 Baker St, London",
     icon: "home",
   },
   {
     id: "2",
     type: "Office",
-    address: "321 Maple Ave, Anytown, USA",
+    address: "12 Market St, Manchester",
     icon: "office-building",
   },
 ];

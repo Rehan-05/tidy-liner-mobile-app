@@ -16,18 +16,18 @@ import { Calendar, DateData } from "react-native-calendars";
 
 type OnboardingStep = "welcome" | "services" | "verification" | "availability";
 
-export default function Onboarding() {
+export default function CleanerOnboarding() {
   const [currentStep, setCurrentStep] = useState<OnboardingStep>("welcome");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [startDate, setStartDate] = useState<string | null>(null);
   const [endDate, setEndDate] = useState<string | null>(null);
 
   const services = [
-    { id: "house", title: "House Cleaning" },
+    { id: "regular", title: "Regular House Cleaning" },
     { id: "deep", title: "Deep Cleaning" },
-    { id: "office", title: "Office Cleaning" },
+    { id: "office", title: "Commercial/Office Cleaning" },
     { id: "move", title: "Move In/Out Cleaning" },
-    { id: "specialty", title: "Specialty Cleaning" },
+    { id: "airbnb", title: "Airbnb/Rental Turnover" },
   ];
 
   const handleDateSelect = (day: DateData) => {
@@ -93,7 +93,7 @@ export default function Onboarding() {
         setCurrentStep("availability");
         break;
       case "availability":
-        router.push("/(user-tabs)");
+        router.push("/(tabs)");
         break;
     }
   };
@@ -173,8 +173,8 @@ export default function Onboarding() {
           <View style={styles.contentContainer}>
             <Text style={styles.title}>Welcome to TidyLinker!</Text>
             <Text style={styles.subtitle}>
-              Let's get you set up to start earning. Follow the steps to
-              complete your profile and access jobs.
+              Join our community of professional cleaners. Complete your profile
+              to start receiving job opportunities and grow your business.
             </Text>
           </View>
         );
@@ -182,9 +182,10 @@ export default function Onboarding() {
       case "services":
         return (
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>Select Your Services</Text>
+            <Text style={styles.title}>Your Cleaning Services</Text>
             <Text style={styles.subtitle}>
-              Choose the types of cleaning services you'd like to offer.
+              Select the cleaning services you specialize in. This helps us
+              match you with the right clients.
             </Text>
             {services.map((service) => (
               <TouchableOpacity
@@ -226,10 +227,10 @@ export default function Onboarding() {
       case "verification":
         return (
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>Upload Your Documents</Text>
+            <Text style={styles.title}>Professional Verification</Text>
             <Text style={styles.subtitle}>
-              To complete your profile, we need to verify your identity and
-              address.
+              Build trust with clients by verifying your identity and
+              professional credentials.
             </Text>
             <View style={styles.uploadSection}>
               <View style={styles.uploadItem}>
@@ -239,9 +240,9 @@ export default function Onboarding() {
                   color={COLORS.primaryDarkGreen}
                 />
                 <View style={styles.uploadTextContainer}>
-                  <Text style={styles.uploadTitle}>Photo ID</Text>
+                  <Text style={styles.uploadTitle}>Identity Verification</Text>
                   <Text style={styles.uploadSubtitle}>
-                    Upload a clear photo of your driver's license or passport
+                    Upload your ID or passport
                   </Text>
                 </View>
                 <TouchableOpacity style={styles.uploadButton}>
@@ -250,14 +251,14 @@ export default function Onboarding() {
               </View>
               <View style={styles.uploadItem}>
                 <MaterialCommunityIcons
-                  name="home"
+                  name="certificate"
                   size={32}
                   color={COLORS.primaryDarkGreen}
                 />
                 <View style={styles.uploadTextContainer}>
-                  <Text style={styles.uploadTitle}>Proof of Address</Text>
+                  <Text style={styles.uploadTitle}>Certifications</Text>
                   <Text style={styles.uploadSubtitle}>
-                    Upload a recent utility bill or bank statement
+                    Add any cleaning certifications
                   </Text>
                 </View>
                 <TouchableOpacity style={styles.uploadButton}>
@@ -271,10 +272,10 @@ export default function Onboarding() {
       case "availability":
         return (
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>Set Your Availability</Text>
+            <Text style={styles.title}>Work Schedule</Text>
             <Text style={styles.subtitle}>
-              Select a date range when you're available to work. This helps us
-              match you with jobs that fit your schedule.
+              Set your working hours and availability. You can always update
+              this later.
             </Text>
             <Calendar
               onDayPress={handleDateSelect}

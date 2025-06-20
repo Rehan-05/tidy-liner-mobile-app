@@ -47,14 +47,13 @@ export default function RootLayout() {
   return (
     <>
       <StatusBar
-        barStyle="light-content"
+        barStyle="dark-content"
         translucent
         backgroundColor="transparent"
       />
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: COLORS.primaryDarkGreen },
         }}
       >
         <Stack.Screen

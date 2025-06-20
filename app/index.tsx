@@ -12,6 +12,6 @@ export default function Index() {
   return isAuthenticated ? (
     <Redirect href="/(tabs)" />
   ) : (
-    <Redirect href="/screens/type-selection/type-selection" />
+    <Redirect href="/screens/welcome/welcome" />
   );
 }

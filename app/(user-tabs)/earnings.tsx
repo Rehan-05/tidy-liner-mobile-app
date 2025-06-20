@@ -34,15 +34,15 @@ export default function Earnings() {
           color={COLORS.primaryDarkGreen}
         />
       </View>
-      <Text style={styles.earningsAmount}>${earningsData.totalEarned}</Text>
+      <Text style={styles.earningsAmount}>£{earningsData.totalEarned}</Text>
       <View style={styles.earningsGrid}>
         <View style={styles.earningsGridItem}>
           <Text style={styles.gridLabel}>Pending</Text>
-          <Text style={styles.gridValue}>${earningsData.pendingPayments}</Text>
+          <Text style={styles.gridValue}>£{earningsData.pendingPayments}</Text>
         </View>
         <View style={styles.earningsGridItem}>
           <Text style={styles.gridLabel}>Bonus</Text>
-          <Text style={styles.gridValue}>${earningsData.levelBonus}</Text>
+          <Text style={styles.gridValue}>£{earningsData.levelBonus}</Text>
         </View>
       </View>
     </View>

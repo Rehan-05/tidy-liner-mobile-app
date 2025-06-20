@@ -16,20 +16,20 @@ const currentJobs = [
   {
     id: "1",
     type: "Deep Cleaning",
-    address: "123 Maple Street",
+    address: "12 King St, London",
     status: "In Progress",
     date: "Today",
     time: "2:00 PM - 5:00 PM",
-    price: "$150",
+    price: "£150",
   },
   {
     id: "2",
     type: "Move-Out Cleaning",
-    address: "456 Oak Avenue",
+    address: "8 Hill Rd, Bristol",
     status: "Starting Soon",
     date: "Today",
     time: "5:30 PM - 8:30 PM",
-    price: "$200",
+    price: "£200",
   },
 ];
 
@@ -37,20 +37,20 @@ const pendingJobs = [
   {
     id: "3",
     type: "Standard Cleaning",
-    address: "789 Pine Lane",
+    address: "23 Park Ave, Leeds",
     status: "Pending Confirmation",
     date: "Tomorrow",
     time: "10:00 AM - 12:00 PM",
-    price: "$120",
+    price: "£120",
   },
   {
     id: "4",
     type: "Office Cleaning",
-    address: "101 Elm Street",
+    address: "5 Market St, Manchester",
     status: "Awaiting Schedule",
     date: "Next Week",
     time: "Flexible",
-    price: "$180",
+    price: "£180",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function Jobs() {
 
         <View style={styles.detailRow}>
           <MaterialCommunityIcons
-            name="currency-usd"
+            name="currency-gbp"
             size={18}
             color={COLORS.dustyMint}
           />

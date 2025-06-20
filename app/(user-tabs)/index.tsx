@@ -18,9 +18,9 @@ const todayJobs = [
     id: "1",
     type: "New Job",
     title: "Luxury Apartment Cleaning",
-    address: "123 Marina Bay, Downtown",
+    address: "7 River St, London",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500",
-    price: "$180",
+    price: "£180",
     time: "2:00 PM - 5:00 PM",
   },
 ];
@@ -29,18 +29,18 @@ const upcomingJobs = [
   {
     id: "1",
     title: "Corporate Office Deep Clean",
-    address: "456 Business Plaza, Midtown",
+    address: "14 High St, Birmingham",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=500",
-    price: "$250",
+    price: "£250",
     date: "Tomorrow",
     time: "9:00 AM - 1:00 PM",
   },
   {
     id: "2",
     title: "Penthouse Maintenance",
-    address: "789 Skyview Towers, Uptown",
+    address: "3 Crown Sq, Leeds",
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500",
-    price: "$200",
+    price: "£200",
     date: "Next Monday",
     time: "10:00 AM - 2:00 PM",
   },
@@ -94,7 +94,7 @@ export default function Home() {
             </View>
             <View style={styles.detailItem}>
               <MaterialCommunityIcons
-                name="currency-usd"
+                name="currency-gbp"
                 size={16}
                 color={COLORS.dustyMint}
               />

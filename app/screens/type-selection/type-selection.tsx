@@ -30,7 +30,7 @@ export default function TypeSelection() {
               router.push("/screens/auth/authentication?type=user")
             }
           >
-            <Text style={styles.buttonText}>User Side</Text>
+            <Text style={styles.buttonText}>Client</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -39,7 +39,7 @@ export default function TypeSelection() {
               router.push("/screens/auth/authentication?type=cleaner")
             }
           >
-            <Text style={styles.buttonText}>Cleaner Side</Text>
+            <Text style={styles.buttonText}>Cleaner</Text>
           </TouchableOpacity>
         </View>
       </View>

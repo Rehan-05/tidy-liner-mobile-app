@@ -24,7 +24,7 @@ const cleaners = [
     available: true,
     image:
       "https://images.unsplash.com/photo-1664575602554-2087b04935a5?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$25/hr",
+    price: "£25/hr",
     experience: "5 years",
   },
   {
@@ -36,7 +36,7 @@ const cleaners = [
     available: true,
     image:
       "https://plus.unsplash.com/premium_photo-1705018500344-450a9e2d4c56?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$28/hr",
+    price: "£28/hr",
     experience: "3 years",
   },
   {
@@ -48,7 +48,7 @@ const cleaners = [
     available: true,
     image:
       "https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$28/hr",
+    price: "£28/hr",
     experience: "3 years",
   },
 ];

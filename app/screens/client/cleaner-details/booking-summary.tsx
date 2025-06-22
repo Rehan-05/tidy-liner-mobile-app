@@ -120,19 +120,19 @@ export default function BookingDetails() {
             <View style={styles.priceRow}>
               <Text style={styles.priceLabel}>Standard Cleaning</Text>
               <Text style={styles.priceValue}>
-                ${bookingDetails.priceBreakdown.cleaning}
+                £{bookingDetails.priceBreakdown.cleaning}
               </Text>
             </View>
             <View style={styles.priceRow}>
               <Text style={styles.priceLabel}>Service Fee</Text>
               <Text style={styles.priceValue}>
-                ${bookingDetails.priceBreakdown.serviceFee}
+                £{bookingDetails.priceBreakdown.serviceFee}
               </Text>
             </View>
             <View style={[styles.priceRow, styles.totalRow]}>
               <Text style={styles.totalLabel}>Total</Text>
               <Text style={styles.totalValue}>
-                ${bookingDetails.priceBreakdown.total}
+                £{bookingDetails.priceBreakdown.total}
               </Text>
             </View>
           </View>

@@ -36,7 +36,7 @@ export default function TypeSelection() {
           <TouchableOpacity
             style={styles.button}
             onPress={() =>
-              router.push("/screens/auth/authentication?type=cleaner")
+              router.push("/screens/auth/authentication?type=client")
             }
           >
             <Text style={styles.buttonText}>Cleaner</Text>

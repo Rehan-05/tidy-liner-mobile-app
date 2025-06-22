@@ -19,7 +19,7 @@ export default function JobDetails() {
     address: "123 Marina Bay, Downtown",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500",
     price: "£180",
-    time: "2:00 PM - 5:00 PM",
+    time: "Morning | Evening | Custom",
     date: "March 15, 2024",
     client: {
       name: "Sarah Anderson",

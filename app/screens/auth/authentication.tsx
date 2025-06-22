@@ -2,6 +2,7 @@ import { COLORS, FONTS, SIZES } from "@/constants/theme";
 import { router, useLocalSearchParams } from "expo-router";
 import React from "react";
 import {
+  Image,
   Platform,
   SafeAreaView,
   StyleSheet,
@@ -16,15 +17,15 @@ export default function Authentication() {
   const handleAuth = (action: "login" | "signup") => {
     if (type === "user") {
       if (action === "login") {
-        router.push("/(user-tabs)");
-      } else {
-        router.push("/screens/user/onboarding/onboarding");
-      }
-    } else {
-      if (action === "login") {
         router.push("/(tabs)");
       } else {
         router.push("/screens/client/onboarding/cleaner-onboarding");
+      }
+    } else {
+      if (action === "login") {
+        router.push("/(user-tabs)");
+      } else {
+        router.push("/screens/user/onboarding/onboarding");
       }
     }
   };
@@ -33,10 +34,15 @@ export default function Authentication() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <View style={styles.card}>
+          <View style={styles.logoSection}>
+            <Image
+              source={require("@/assets/images/app-logo.png")}
+              style={styles.logo}
+              resizeMode="contain"
+            />
+          </View>
           <Text style={styles.title}>
-            {type === "user"
-              ? "Book\nCleaning\nServices"
-              : "Work as\na Cleaner"}
+            {type === "user" ? "Book Cleaning Services" : "Work as\na Cleaner"}
           </Text>
 
           <View style={styles.buttonContainer}>
@@ -83,7 +89,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    justifyContent: "center",
+    // justifyContent: "center",
   },
   title: {
     fontSize: 32,
@@ -91,12 +97,22 @@ const styles = StyleSheet.create({
     color: COLORS.primaryDarkGreen,
     marginBottom: 32,
     lineHeight: 40,
+    textAlign: "center",
   },
   icon: {
     marginBottom: 32,
   },
   buttonContainer: {
     gap: 12,
+  },
+  logoSection: {
+    alignItems: "center",
+    marginTop: 40,
+  },
+  logo: {
+    width: 250,
+    height: 250,
+    marginBottom: 16,
   },
   loginButton: {
     width: "100%",

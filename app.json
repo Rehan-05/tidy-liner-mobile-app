@@ -4,7 +4,7 @@
     "slug": "tidy-linker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/app-logo.png",
+    "icon": "./assets/images/app-logo.jpeg",
     "scheme": "tidylinker",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -18,10 +18,11 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/app-logo.png",
+        "foregroundImage": "./assets/images/app-logo.jpeg",
         "backgroundColor": "#F9F7F1"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.tidylinker"
     },
     "web": {
       "bundler": "metro",
@@ -42,6 +43,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "512c2299-0bf9-4c1c-8bb9-50af7d27d6ac"
+      }
     }
   }
 }

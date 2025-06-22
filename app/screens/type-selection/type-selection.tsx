@@ -17,7 +17,7 @@ export default function TypeSelection() {
       <View style={styles.content}>
         <View style={styles.logoSection}>
           <Image
-            source={require("@/assets/images/app-logo.png")}
+            source={require("@/assets/images/app-logo.jpeg")}
             style={styles.logo}
             resizeMode="contain"
           />

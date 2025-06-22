@@ -36,7 +36,7 @@ export default function Authentication() {
         <View style={styles.card}>
           <View style={styles.logoSection}>
             <Image
-              source={require("@/assets/images/app-logo.png")}
+              source={require("@/assets/images/app-logo.jpeg")}
               style={styles.logo}
               resizeMode="contain"
             />

@@ -36,7 +36,7 @@ export default function RootLayout() {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Image
-          source={require("../assets/images/app-logo.png")}
+          source={require("../assets/images/app-logo.jpeg")}
           style={styles.splashImage}
           resizeMode="cover"
         />

@@ -150,7 +150,7 @@ export default function CleanerDetails() {
           {cleanerData.services.map((service) => (
             <View key={service.id} style={styles.serviceItem}>
               <Text style={styles.serviceName}>{service.name}</Text>
-              <Text style={styles.servicePrice}>${service.price}</Text>
+              <Text style={styles.servicePrice}>£{service.price}</Text>
             </View>
           ))}
         </View>

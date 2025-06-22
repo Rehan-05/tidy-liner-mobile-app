@@ -29,7 +29,7 @@ export default function Earnings() {
       <View style={styles.earningsHeader}>
         <Text style={styles.earningsTitle}>Total Earnings</Text>
         <MaterialCommunityIcons
-          name="currency-usd"
+          name="currency-gbp"
           size={24}
           color={COLORS.primaryDarkGreen}
         />
